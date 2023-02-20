@@ -8,6 +8,8 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
+  reset,
+  initApi,
 } from './counterSlice';
 import styles from './Counter.module.css';
 
@@ -36,6 +38,13 @@ export function Counter() {
         >
           +
         </button>
+        <button
+          className={styles.button}
+          aria-label="Decrement value"
+          onClick={() => dispatch(reset())}
+        >
+          Reset
+        </button>
       </div>
       <div className={styles.row}>
         <input
@@ -61,6 +70,13 @@ export function Counter() {
           onClick={() => dispatch(incrementIfOdd(incrementValue))}
         >
           Add If Odd
+        </button>
+        <button
+          className={styles.button}
+          aria-label="Decrement value"
+          onClick={() => dispatch(initApi())}
+        >
+          Init from api
         </button>
       </div>
     </div>
