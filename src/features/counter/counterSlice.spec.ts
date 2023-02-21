@@ -11,29 +11,29 @@ describe('counter reducer', () => {
     value: 3,
     status: 'idle',
   };
-  it('should handle initial state', () => {
+  test('should handle initial state', () => {
     expect(counterReducer(undefined, { type: 'unknown' })).toEqual({
       value: 0,
       status: 'idle',
     });
   });
 
-  it('should handle increment', () => {
+  test('should handle increment', () => {
     const actual = counterReducer(initialState, increment());
     expect(actual.value).toEqual(4);
   });
 
-  it('should handle decrement', () => {
+  test('should handle decrement', () => {
     const actual = counterReducer(initialState, decrement());
     expect(actual.value).toEqual(2);
   });
 
-  it('should handle incrementByAmount', () => {
+  test('should handle incrementByAmount', () => {
     const actual = counterReducer(initialState, incrementByAmount(2));
     expect(actual.value).toEqual(5);
   });
 
-  it('should handle reset', () => {
+  test('should handle reset', () => {
     const actual = counterReducer(initialState, reset());
     expect(actual.value).toEqual(0);
   });

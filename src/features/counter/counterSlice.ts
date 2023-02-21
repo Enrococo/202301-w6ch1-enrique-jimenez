@@ -26,15 +26,6 @@ export const incrementAsync = createAsyncThunk(
   }
 );
 
-// export const initApi = createAsyncThunk('', async () => {
-//   const response = await fetch(
-//     'http://www.randomnumberapi.com/api/v1.0/random?min=0&max=10'
-//   );
-//   const randomResponse = await response.json();
-//   console.log(randomResponse[0]);
-//   return randomResponse[0];
-// });
-
 export const initApi = createAsyncThunk('counter/fetchRandom', async () => {
   const response = await fetchRandom();
   return response[0];
@@ -97,7 +88,7 @@ export const { increment, decrement, incrementByAmount, reset } =
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectCount = (state: RootState) => state.counter.value;
-
+export const selectStatus = (state: RootState) => state.counter.status;
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.
 export const incrementIfOdd =
