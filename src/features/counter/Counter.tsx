@@ -42,7 +42,7 @@ export function Counter() {
         </button>
         <button
           className={styles.button}
-          aria-label="Decrement value"
+          aria-label="Reset"
           onClick={() => dispatch(reset())}
         >
           Reset
@@ -75,7 +75,7 @@ export function Counter() {
         </button>
         <button
           className={status === 'loading' ? styles.asyncButton : styles.button}
-          aria-label="Decrement value"
+          aria-label="Random button"
           onClick={() => dispatch(initApi())}
         >
           Init from api
