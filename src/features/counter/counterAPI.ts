@@ -5,12 +5,10 @@ export function fetchCount(amount = 1) {
   );
 }
 
-export function fetchRandom() {
-  return new Promise<number[]>(async (resolve) => {
-    const response = await fetch(
-      'https://www.randomnumberapi.com/api/v1.0/random?min=10&max=50'
-    );
-    const randomResponse: number[] = await response.json();
-    resolve(randomResponse);
-  });
+export async function fetchRandom() {
+  const response = await fetch(
+    'https://www.randomnumberapi.com/api/v1.0/random?min=10&max=50'
+  );
+  const randomResponse: number[] = await response.json();
+  return randomResponse;
 }
